@@ -3,7 +3,7 @@ package com.example.pp2.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tutorials")
+@Table(name = "car")
 public class Car {
 
     @Id
