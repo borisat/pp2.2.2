@@ -17,9 +17,6 @@ public class CarController {
     @Value("${maxCar}")
     private int maxCar;
 
-
-
-
     @GetMapping("/cars")
     public String getAll(@RequestParam(name = "count", required = false) String count,
                          @RequestParam(name = "sortBy", required = false) String sortBy,
@@ -35,9 +32,6 @@ public class CarController {
         } else if ((count != null && sortBy != null)) {
             model.addAttribute("cars", carService.getNumberOfCarsSortedBy(Integer.valueOf(count), sortBy));
         }
-
-
-//        model.addAttribute("cars", carService.getNumberOfCars(Integer.valueOf(name)));
         return "cars";
     }
 }
