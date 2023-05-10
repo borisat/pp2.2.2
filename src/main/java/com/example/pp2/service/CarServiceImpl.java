@@ -21,7 +21,7 @@ public class CarServiceImpl implements CarService {
     private CarDAO carDAO;
 
     @Value("${maxCar}")
-    private int maxCar;
+    private int MAX_CAR;
 
 
     @Override
@@ -33,6 +33,9 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<Car> getNumberOfCars(int number) {
+        if (number > MAX_CAR) {
+            return new ArrayList<>(getAllCars());
+        }
         return getAllCars().stream().limit(number).collect(Collectors.toList());
     }
 
@@ -45,6 +48,9 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<Car> getNumberOfCarsSortedBy(int number, String sortField) {
+        if (number > MAX_CAR) {
+            return new ArrayList<>(getAllCarsSortedBy(sortField));
+        }
         return getAllCarsSortedBy(sortField).stream().limit(number).collect(Collectors.toList());
     }
 }

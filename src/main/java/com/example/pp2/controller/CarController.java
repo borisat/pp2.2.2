@@ -1,6 +1,8 @@
 package com.example.pp2.controller;
 
+import com.example.pp2.exception.ControllerException;
 import com.example.pp2.service.CarService;
+import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -17,20 +19,25 @@ public class CarController {
     @Value("${maxCar}")
     private int maxCar;
 
+    @Value("${disabledSortFields}")
+    private String disabledSortFields;
+
     @GetMapping("/cars")
     public String getAll(@RequestParam(name = "count", required = false) String count,
                          @RequestParam(name = "sortBy", required = false) String sortBy,
-                         Model model) {
+                         Model model) throws ControllerException {
 
-        if ((count == null || Integer.valueOf(count) > maxCar) && sortBy == null) {
+        if ((count == null) && sortBy == null) {
             model.addAttribute("cars", carService.getAllCars());
             return "cars";
-        } else if ((count == null || Integer.valueOf(count) > maxCar) && sortBy != null) {
+        } else if (sortBy != null && sortBy.equals(disabledSortFields)) {
+            throw new ControllerException(sortBy);
+        } else if (count == null) {
             model.addAttribute("cars", carService.getAllCarsSortedBy(sortBy));
-        } else if ((count != null && sortBy == null)) {
-            model.addAttribute("cars", carService.getNumberOfCars(Integer.valueOf(count)));
-        } else if ((count != null && sortBy != null)) {
-            model.addAttribute("cars", carService.getNumberOfCarsSortedBy(Integer.valueOf(count), sortBy));
+        } else if (count != null && sortBy != null) {
+            model.addAttribute("cars", carService.getNumberOfCarsSortedBy(Integer.parseInt(count), sortBy));
+        } else if (count != null) {
+            model.addAttribute("cars", carService.getNumberOfCars(Integer.parseInt(count)));
         }
         return "cars";
     }
