@@ -16,25 +16,18 @@ public class CarController {
     @Autowired
     private CarService carService;
 
-    @Value("${maxCar}")
-    private int maxCar;
-
     @Value("${disabledSortFields}")
     private String disabledSortFields;
 
     @GetMapping("/cars")
-    public String getAll(@RequestParam(name = "count", required = false) String count,
+    public String getAll(@RequestParam(name = "count", required = false, defaultValue = "0") int count,
                          @RequestParam(name = "sortBy", required = false, defaultValue = "id") String sortBy,
                          Model model) throws ControllerException {
-
-        if (count == null) {
-            model.addAttribute("cars", carService.getAllCarsSortedBy(sortBy));
-            return "cars/cars";
-        } else if (sortBy != null && sortBy.equals(disabledSortFields)) {
-            throw new ControllerException(sortBy);
+        try {
+            model.addAttribute("cars", carService.getCars(count, sortBy));
+        } catch (ControllerException e) {
+            throw e;
         }
-        model.addAttribute("cars", carService.getNumberOfCarsSortedBy(Integer.parseInt(count), sortBy));
-        
         return "cars/cars";
     }
 }

@@ -1,12 +1,10 @@
 package com.example.pp2.service;
 
 import com.example.pp2.DAO.CarDAO;
+import com.example.pp2.exception.ControllerException;
 import com.example.pp2.model.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -21,26 +19,30 @@ public class CarServiceImpl implements CarService {
     private CarDAO carDAO;
 
     @Value("${maxCar}")
-    private int MAX_CAR;
+    private int maxCar;
+
+    @Value("${disabledSortFields}")
+    private String disabledSortFields;
 
 
     @Override
-    public void AddCar(String model, String colour, String number) {
+    public void аddCar(String model, String colour, String number) {
         carDAO.save(new Car(model, colour, number));
     }
 
     @Override
-    public List<Car> getAllCarsSortedBy(String sortField) {
+    public List<Car> getCars(int count, String sortField) throws ControllerException {
+
         List<Car> cars = new ArrayList<>();
-        carDAO.findAll(Sort.by(Sort.Direction.ASC, sortField)).forEach(cars::add);
+
+        if (sortField.contains(disabledSortFields)) {
+            throw new ControllerException(sortField);
+        } else if (count == 0 || count > maxCar) {
+            carDAO.findAll(Sort.by(Sort.Direction.ASC, sortField)).forEach(cars::add);
+            return cars;
+        }
+        carDAO.findAll(Sort.by(Sort.Direction.ASC, sortField)).stream().limit(count).forEach(cars::add);
         return cars;
     }
 
-    @Override
-    public List<Car> getNumberOfCarsSortedBy(int number, String sortField) {
-        if (number > MAX_CAR) {
-            return new ArrayList<>(getAllCarsSortedBy(sortField));
-        }
-        return getAllCarsSortedBy(sortField).stream().limit(number).collect(Collectors.toList());
-    }
 }
