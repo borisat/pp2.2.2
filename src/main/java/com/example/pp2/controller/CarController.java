@@ -12,10 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class CarController {
-
     @Autowired
     private CarService carService;
-
     @GetMapping("/cars")
     public String getAll(@RequestParam(name = "count", required = false, defaultValue = "0") int count,
                          @RequestParam(name = "sortBy", required = false, defaultValue = "id") String sortBy,
