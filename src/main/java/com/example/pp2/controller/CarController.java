@@ -27,14 +27,14 @@ public class CarController {
                          @RequestParam(name = "sortBy", required = false, defaultValue = "id") String sortBy,
                          Model model) throws ControllerException {
 
-        if ((count == null)) {
+        if (count == null) {
             model.addAttribute("cars", carService.getAllCarsSortedBy(sortBy));
             return "cars/cars";
         } else if (sortBy != null && sortBy.equals(disabledSortFields)) {
             throw new ControllerException(sortBy);
-        } else if (count != null) {
-            model.addAttribute("cars", carService.getNumberOfCarsSortedBy(Integer.parseInt(count), sortBy));
         }
+        model.addAttribute("cars", carService.getNumberOfCarsSortedBy(Integer.parseInt(count), sortBy));
+        
         return "cars/cars";
     }
 }
