@@ -24,7 +24,7 @@ public class CarProps {
         return maxCars;
     }
 
-    public void setMax_cars(int max_cars) {
-        this.maxCars = max_cars;
+    public void setMax_cars(int maxCars) {
+        this.maxCars = maxCars;
     }
 }
