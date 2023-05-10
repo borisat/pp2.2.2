@@ -10,7 +10,7 @@ import java.util.List;
 public class CarProps {
 
     private List<String> disabledSort;
-    private int max_cars;
+    private int maxCars;
 
     public List<String> getDisabledSort() {
         return disabledSort;
@@ -21,10 +21,10 @@ public class CarProps {
     }
 
     public int getMax_cars() {
-        return max_cars;
+        return maxCars;
     }
 
     public void setMax_cars(int max_cars) {
-        this.max_cars = max_cars;
+        this.maxCars = max_cars;
     }
 }
