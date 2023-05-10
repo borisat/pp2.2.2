@@ -25,6 +25,11 @@ public class CarServiceImpl implements CarService {
 
 
     @Override
+    public void AddCar(String model, String colour, String number) {
+        carDAO.save(new Car(model, colour, number));
+    }
+
+    @Override
     public List<Car> getAllCars() {
         List<Car> cars = new ArrayList<>();
         carDAO.findAll().forEach(cars::add);
