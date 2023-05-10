@@ -1,7 +1,6 @@
 package com.example.pp2.service;
 
-import com.example.pp2.Application;
-import com.example.pp2.ApplicationProps;
+import com.example.pp2.CarProps;
 import com.example.pp2.DAO.CarDAO;
 import com.example.pp2.exception.ControllerException;
 import com.example.pp2.model.Car;
@@ -11,9 +10,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class CarServiceImpl implements CarService {
@@ -21,12 +18,8 @@ public class CarServiceImpl implements CarService {
     @Autowired
     private CarDAO carDAO;
 
-    @Value("${maxCar}")
-    private int maxCar;
-
-
     @Autowired
-    private ApplicationProps applicationProps;
+    private CarProps carProps;
 
     @Override
     public void аddCar(String model, String colour, String number) {
@@ -36,7 +29,8 @@ public class CarServiceImpl implements CarService {
     @Override
     public List<Car> getCars(int count, String sortField) throws ControllerException {
 
-        List<String> disabledSort = applicationProps.getDisabledSort();
+        int maxCar = carProps.getMax_cars();
+        List<String> disabledSort = carProps.getDisabledSort();
         List<Car> cars = new ArrayList<>();
 
         if (disabledSort.contains(sortField)) {

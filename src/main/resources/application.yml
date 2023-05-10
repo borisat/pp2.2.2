@@ -9,8 +9,8 @@ spring:
     username: postgres
     password: 2Ldflwfnm0
     driver-class-name: org.postgresql.Driver
-maxCar: 4
 cars:
   disabledSort:
     - number
     - colour
+  maxCar: 4

@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61891030-d143-461a-aa7f-d0b4d1732ff8" name="Changes" comment="Исправил логику">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pp2/ApplicationProps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pp2/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pp2/controller/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pp2/service/CarServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pp2/service/CarServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-    </list>
+    <list default="true" id="61891030-d143-461a-aa7f-d0b4d1732ff8" name="Changes" comment="Сделал yml и список" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +94,7 @@
       <workItem from="1683479780989" duration="749000" />
       <workItem from="1683481109864" duration="2330000" />
       <workItem from="1683555081929" duration="122000" />
-      <workItem from="1683555263024" duration="50767000" />
+      <workItem from="1683555263024" duration="51115000" />
     </task>
     <task id="LOCAL-00001" summary="доделал сортировки">
       <created>1683664733401</created>
@@ -159,7 +152,28 @@
       <option name="project" value="LOCAL" />
       <updated>1683722443064</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Сделал yml и список">
+      <created>1683730807332</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683730807332</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Сделал yml и список">
+      <created>1683730823060</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1683730823060</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Сделал yml и список">
+      <created>1683730878008</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1683730878008</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +196,8 @@
     <MESSAGE value="поправил пом" />
     <MESSAGE value="убрал дублирующуюся логику из сервисе и контролера" />
     <MESSAGE value="Исправил логику" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправил логику" />
+    <MESSAGE value="Сделал yml и список" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал yml и список" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -190,7 +205,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/pp2/controller/CarController.java</url>
-          <line>19</line>
+          <line>17</line>
           <properties class="com.example.pp2.controller.CarController" method="getAll">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -199,7 +214,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/pp2/service/CarServiceImpl.java</url>
-          <line>39</line>
+          <line>36</line>
           <properties class="com.example.pp2.service.CarServiceImpl" method="getCars">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -208,7 +223,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/pp2/controller/CarController.java</url>
-          <line>23</line>
+          <line>21</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
