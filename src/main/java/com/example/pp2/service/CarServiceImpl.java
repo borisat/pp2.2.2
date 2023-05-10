@@ -29,7 +29,7 @@ public class CarServiceImpl implements CarService {
     @Override
     public List<Car> getCars(int count, String sortField) throws ControllerException {
 
-        int maxCar = carProps.getMax_cars();
+        int maxCar = carProps.getMaxCars();
         List<String> disabledSort = carProps.getDisabledSort();
         List<Car> cars = new ArrayList<>();
 
