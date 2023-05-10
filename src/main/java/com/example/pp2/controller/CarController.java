@@ -16,9 +16,6 @@ public class CarController {
     @Autowired
     private CarService carService;
 
-    @Value("${disabledSortFields}")
-    private String disabledSortFields;
-
     @GetMapping("/cars")
     public String getAll(@RequestParam(name = "count", required = false, defaultValue = "0") int count,
                          @RequestParam(name = "sortBy", required = false, defaultValue = "id") String sortBy,
