@@ -30,21 +30,6 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public List<Car> getAllCars() {
-        List<Car> cars = new ArrayList<>();
-        carDAO.findAll().forEach(cars::add);
-        return cars;
-    }
-
-    @Override
-    public List<Car> getNumberOfCars(int number) {
-        if (number > MAX_CAR) {
-            return new ArrayList<>(getAllCars());
-        }
-        return getAllCars().stream().limit(number).collect(Collectors.toList());
-    }
-
-    @Override
     public List<Car> getAllCarsSortedBy(String sortField) {
         List<Car> cars = new ArrayList<>();
         carDAO.findAll(Sort.by(Sort.Direction.ASC, sortField)).forEach(cars::add);

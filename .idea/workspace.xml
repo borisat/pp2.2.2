@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="61891030-d143-461a-aa7f-d0b4d1732ff8" name="Changes" comment="поправил пом">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pp2/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pp2/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pp2/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pp2/controller/CarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pp2/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pp2/service/CarService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pp2/service/CarServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pp2/service/CarServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cars.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/cars/cars.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +58,12 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ноут\IdeaProjects\pp2.2.2\src\main\resources\templates\cars" />
+      <recent name="C:\Users\ноут\IdeaProjects\pp2.2.2\src\main\resources\templates\cars\cars" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="pp2.2.2" />
@@ -92,7 +98,7 @@
       <workItem from="1683479780989" duration="749000" />
       <workItem from="1683481109864" duration="2330000" />
       <workItem from="1683555081929" duration="122000" />
-      <workItem from="1683555263024" duration="37671000" />
+      <workItem from="1683555263024" duration="39995000" />
     </task>
     <task id="LOCAL-00001" summary="доделал сортировки">
       <created>1683664733401</created>
@@ -122,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683710237080</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="поправил пом">
+      <created>1683710626943</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683710626943</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -24,22 +24,18 @@ public class CarController {
 
     @GetMapping("/cars")
     public String getAll(@RequestParam(name = "count", required = false) String count,
-                         @RequestParam(name = "sortBy", required = false) String sortBy,
+                         @RequestParam(name = "sortBy", required = false, defaultValue = "id") String sortBy,
                          Model model) throws ControllerException {
 
-        if ((count == null) && sortBy == null) {
-            model.addAttribute("cars", carService.getAllCars());
-            return "cars";
+        if ((count == null)) {
+            model.addAttribute("cars", carService.getAllCarsSortedBy(sortBy));
+            return "cars/cars";
         } else if (sortBy != null && sortBy.equals(disabledSortFields)) {
             throw new ControllerException(sortBy);
-        } else if (count == null) {
-            model.addAttribute("cars", carService.getAllCarsSortedBy(sortBy));
-        } else if (count != null && sortBy != null) {
-            model.addAttribute("cars", carService.getNumberOfCarsSortedBy(Integer.parseInt(count), sortBy));
         } else if (count != null) {
-            model.addAttribute("cars", carService.getNumberOfCars(Integer.parseInt(count)));
+            model.addAttribute("cars", carService.getNumberOfCarsSortedBy(Integer.parseInt(count), sortBy));
         }
-        return "cars";
+        return "cars/cars";
     }
 }
 
