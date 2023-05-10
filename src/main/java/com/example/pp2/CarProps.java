@@ -20,7 +20,7 @@ public class CarProps {
         this.disabledSort = disabledSort;
     }
 
-    public int getMax_cars() {
+    public int getMaxCars() {
         return maxCars;
     }
 
